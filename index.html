@@ -9,24 +9,70 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Stylesheet CSS -->
-<!--     <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+   <link rel="stylesheet" type="text/css" href="../assets/style.css">
+
+   <!-- Moment.js -->
+   <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
 ​
-    <title>Trivia Game</title>
+    <title>Train Scheduler</title>
   </head>
   <body>
-    <section class="header">
-    <div class="container">
-        <div class="row margin-bottom">
-            <div class="col-5 align-self-center title">
-                <h1>US  History Trivia Game</h1>
-            </div>
+  
+      
+    <div class="header">
+      <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4"><i class="far fa-newspaper"></i>Any time is Train Time</h1>
+        <h3>Choo Choo. Chee Chee</h3>
+      </div>
+  <section>  
+
+    <div class="container1">
+        <p style="background-color: #337ab7; color:white;">Current Train Schedule</p>
+        <table class="table" id="trainList">
+          <thead>
+            <tr>
+            <th scope="col">Train Name</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Frequency (min)</th>
+            <th scope="col">Next Arrival</th>
+            <th scope="col">Minutes Away</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+
+  </section>
+  <section>
+    <div class="container2">
+
+        <p style="background-color: #337ab7; color:white;">Add Train</p>
+        <div class="form-group">
+        <label for="name1">Train Name</label>
+        <input class="form-control" id="nameInput" type="text">
         </div>
+
+        <div class="form-group">
+        <label for="destination1">Destination</label>
+        <input class="form-control" id="destinationInput" type="text">
+        </div>
+
+        <div class="form-group">
+        <label for="firstTrain1">First Train Time (HH:mm - military time)</label>
+        <input type="time" class="form-control" id="firstTrainInput">
+        </div>
+
+        <div class="form-group">
+        <label for="frequency1">Frequency (min)</label>
+        <input class="form-control" id="frequencyInput" type="text">
+        </div>
+
+        <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+
     </div>
-    </section>
-​<!-- 
-    Optional JavaScript 
-    <script src="assets/javascript/app.js"></script> -->
-    
+  </section>
+
+​
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
 ​
@@ -36,49 +82,19 @@
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#config-web-app -->
 ​
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyCDb9a-mRYnPz-i2GZ1sHtCUuvCGKNaCx0",
-    authDomain: "my-first-firebase-app-c76ee.firebaseapp.com",
-    databaseURL: "https://train-scheduler-3d9b6.firebaseio.com/",
-    projectId: "train-scheduler-3d9b6",
-    storageBucket: "",
-    messagingSenderId: "916207144960",
-    appId: "1:916207144960:web:768a35cfea9d097b"
-  }; 
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  
-  var database = firebase.database();
-  database.ref().push({
-      name:"John",
-      lastName:"Doe"
-  })
-  database.ref("/occupation").set({
-      fullTime:"Somthing",
-      partialTime:"Something Else",
-      hobbies:["a", "b", "c", "d"]
-  })
-  database.ref("/lastName").set("lastname Changed")
-  database.ref().on("value", function(snapshot){
-      console.log(snapshot.val())
-  })
 
-</script>
 <input: id="lastNameInput" style="width:100%;"></input:>
-<script>
-$("#lastNameInput").on("keyup",function()
-{
-    database.ref("/lastName").set($(this).val());
-})
-</script>
-​
+
 ​
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+<!--  My JavaScript  -->
+<script src="../assets/app.js"></script>
+
   </body>
 </html>
+
